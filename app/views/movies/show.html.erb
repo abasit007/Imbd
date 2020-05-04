@@ -1,0 +1,14 @@
+<div style ='margin-top: 20px;'><%= image_tag @movies.image.url(:large) %></div>
+<p>
+  <strong>Name:</strong>
+  <%= @movies.title %>
+</p>
+ 
+<p>
+  <strong>Rating:</strong>
+  <%= @movies.rating %>
+</p>
+<%= link_to 'Edit', edit_movie_path(@movies) %>
+<br>
+<br>
+<%= link_to 'Back to Movies List', movies_path %>

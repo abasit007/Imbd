@@ -1,0 +1,1 @@
+{"ast":null,"code":"console.log(\"custom js file loaded\");","map":{"version":3,"sources":["/home/abdul/projects/Imbd/app/javascript/packs/custom.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,uBAAZ","sourcesContent":["console.log(\"custom js file loaded\")"]},"metadata":{},"sourceType":"module"}

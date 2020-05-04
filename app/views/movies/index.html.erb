@@ -1,0 +1,18 @@
+<h2>Movies Listing</h2>
+
+	<% @movies.each do |movie|%>
+		<div style = "width:100%; display: inline-flex;">	
+			<div style = "width:50%;">
+				<h4>Name: <%= movie.title%></h4>
+				<h4>Rating: <%= movie.rating%></h4>
+				<%= link_to 'Show', movie_path(movie) %>
+				<%= link_to 'Delete', movie_path(movie),
+	                method: :delete,
+	                data: { confirm: 'Are you sure?' } %>
+			</div>
+			<div style = "width:50%; text-align: left; margin-top: 4%"><%= image_tag movie.image.url(:medium) %></div>
+		</div>
+	<% end %>
+
+<br>
+<%= link_to 'New Movie', new_movie_path %>

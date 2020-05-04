@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imbd</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'coustom', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'search', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= form_with url: search_path, local: true, method: :get do |form| %>
+      <%= form.text_field :q, placeholder: "Search", data: {behaviour: "autocomplete"} %>
+      <%= form.button "search" %>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <p>Signed in as: <%= current_user.email %></p>
+      <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+    <% end %>
+    <% if !user_signed_in? %>
+      <%= link_to 'SignIn', user_session_path %>
+      <%= link_to 'SignUp', new_user_registration_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

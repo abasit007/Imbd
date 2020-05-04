@@ -1,0 +1,36 @@
+<%= form_with model: @movies, html: { multipart: true }, local: true do |form| %>
+ 
+  <% if @movies.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@movies.errors.count, "error") %> prohibited
+        this movie from being saved:
+      </h2>
+      <ul>
+        <% @movies.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :Image %><br>
+    <%= form.file_field :image %>
+  </p>
+  
+  <p>
+    <%= form.label :Title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :Rating %><br>
+    <%= form.text_field :rating %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
