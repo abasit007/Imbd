@@ -11845,3 +11845,85 @@ Processing by MoviesController#show as HTML
 Completed 200 OK in 39ms (Views: 31.6ms | ActiveRecord: 1.2ms | Allocations: 9355)
 
 
+Started GET "/" for ::1 at 2020-05-05 02:18:46 +0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (3.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:3
+  Rendered movies/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1657)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 5.7ms | Allocations: 9854)
+
+
+Started GET "/search?q=t" for ::1 at 2020-05-05 02:18:50 +0500
+Processing by MoviesController#search as JSON
+  Parameters: {"q"=>"t"}
+  Rendering movies/search.json.jbuilder
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title ILIKE '%t%')[0m
+  ↳ app/views/movies/search.json.jbuilder:2
+  Rendered movies/search.json.jbuilder (Duration: 5.0ms | Allocations: 833)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.0ms | Allocations: 1478)
+
+
+Started GET "/movies/8" for ::1 at 2020-05-05 02:18:52 +0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:25:in `show'
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 209)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 8907)
+
+
+Started GET "/" for ::1 at 2020-05-09 22:55:26 +0500
+  [1m[35m (53.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (57.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:3
+  Rendered movies/index.html.erb within layouts/application (Duration: 169.4ms | Allocations: 8124)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 561ms (Views: 379.4ms | ActiveRecord: 116.0ms | Allocations: 22073)
+
+
+Started GET "/search?q=a" for ::1 at 2020-05-09 22:55:40 +0500
+Processing by MoviesController#search as JSON
+  Parameters: {"q"=>"a"}
+  Rendering movies/search.json.jbuilder
+  [1m[36mMovie Load (27.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title ILIKE '%a%')[0m
+  ↳ app/views/movies/search.json.jbuilder:2
+  Rendered movies/search.json.jbuilder (Duration: 48.3ms | Allocations: 1015)
+Completed 200 OK in 52ms (Views: 23.5ms | ActiveRecord: 27.3ms | Allocations: 2971)
+
+
+Started GET "/search?q=aa" for ::1 at 2020-05-09 22:55:40 +0500
+Processing by MoviesController#search as JSON
+  Parameters: {"q"=>"aa"}
+  Rendering movies/search.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title ILIKE '%aa%')[0m
+  ↳ app/views/movies/search.json.jbuilder:2
+  Rendered movies/search.json.jbuilder (Duration: 1.7ms | Allocations: 677)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1300)
+
+
+Started GET "/search?q=a" for ::1 at 2020-05-09 22:55:44 +0500
+Processing by MoviesController#search as JSON
+  Parameters: {"q"=>"a"}
+  Rendering movies/search.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (title ILIKE '%a%')[0m
+  ↳ app/views/movies/search.json.jbuilder:2
+  Rendered movies/search.json.jbuilder (Duration: 2.7ms | Allocations: 915)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1544)
+
+
